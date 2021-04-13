@@ -110,7 +110,7 @@ class SimpleRichText extends StatelessWidget {
       for (int k = 0; k < linesList.length; k++) {
         print('Line ${k + 1}: ${linesList[k]}');
         // split into array
-        List<String> spanList = linesList[k].split(RegExp(chars ?? r"[*~/_\\]"));
+        List<String> spanList = linesList[k].split(RegExp(chars ?? r"[*~_\\]"));
         print("len=${spanList.length}: $spanList");
 
         if (spanList.length == 1) {
@@ -170,8 +170,8 @@ class SimpleRichText extends StatelessWidget {
               decoration: set.contains('_')
                   ? TextDecoration.underline
                   : TextDecoration.none,
-              fontStyle:
-              set.contains('/') ? FontStyle.italic : FontStyle.normal,
+              // fontStyle:
+              // set.contains('/') ? FontStyle.italic : FontStyle.normal,
               fontWeight:
               set.contains('*') ? FontWeight.bold : FontWeight.normal,
               fontSize: map.containsKey('fontSize')
@@ -242,13 +242,13 @@ class SimpleRichText extends StatelessWidget {
                     print("TAP: HTTP: $caption => /$v");
                     assert(v != null);
                     try {
-                      await launch('http://$v');
+                      await launch('https://$v', forceSafariVC: false, forceWebView: false);
                     } catch (e) {
                       print('Could not launch http://$v: $e');
                       try {
-                        await launch('https://$v');
+                        await launch('http://$v', forceSafariVC: false, forceWebView: false);
                       } catch (e) {
-                        print('Could not launch https://$v: $e');
+                        print('Could not launch http://$v: $e');
                       }
                     }
                   }; // TODO add possibility of tel, mailto, sms, whats,...?
@@ -345,3 +345,4 @@ class SimpleRichText extends StatelessWidget {
     }
   }
 }
+
