@@ -173,7 +173,7 @@ class SimpleRichText extends StatelessWidget {
               // fontStyle:
               // set.contains('/') ? FontStyle.italic : FontStyle.normal,
               fontWeight:
-              set.contains('*') ? FontWeight.bold : FontWeight.normal,
+              set.contains('*') ? FontWeight.w600 : FontWeight.normal,
               fontSize: map.containsKey('fontSize')
                   ? double.parse(map['fontSize'])
                   : style.fontSize,
