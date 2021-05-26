@@ -13,7 +13,7 @@ dependencies:
   url_launcher: ^5.1.2
   simple_navigation:
     git: https://github.com/remoteportal/simple_navigation.git
-    ref: 13c18bc
+      ref: 13c18bc
 
 dev_dependencies:
   flutter_test:
