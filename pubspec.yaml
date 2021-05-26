@@ -12,7 +12,8 @@ dependencies:
   meta: ^1.1.8
   url_launcher: ^5.1.2
   simple_navigation:
-    git: https://github.com/remoteportal/simple_navigation.git
+    git:
+      url: https://github.com/remoteportal/simple_navigation.git
       ref: 13c18bc
 
 dev_dependencies:
